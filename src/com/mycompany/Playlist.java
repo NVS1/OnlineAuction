@@ -7,6 +7,9 @@ public class Playlist {
     private final ArrayList<Song> songs = new ArrayList<>();
 
     public Playlist(String title) {
+        if (title.isEmpty()){
+            throw  new IllegalArgumentException("Incorrectly title");
+        }
         this.title = title;
     }
 

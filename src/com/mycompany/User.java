@@ -16,8 +16,8 @@ public class User {
 
     public Playlist createPlaylist(String title) {
         for (Playlist playlist : playlists) {
-            if (playlist.getTitle().equals(title) || title.isEmpty()) {
-                throw new IllegalArgumentException("Incorrectly title or such title is already using");
+            if (playlist.getTitle().equals(title)) {
+                throw new IllegalArgumentException("Such title is already using");
             }
         }
         Playlist newPlaylist = new Playlist(title);
@@ -29,13 +29,12 @@ public class User {
         if (playlists.isEmpty()) {
             throw new IllegalStateException("List of playlist is empty");
         }
-        if (title.isEmpty()) {
-            throw new IllegalArgumentException("Incorrectly title");
-        }
         Playlist playlistByTitle = null;
         for (Playlist playlist : playlists) {
             if (playlist.getTitle().equalsIgnoreCase(title)) {
                 playlistByTitle = playlist;
+            } else {
+                throw new IllegalArgumentException("Playlist not found");
             }
         }
         return playlistByTitle;
@@ -43,11 +42,7 @@ public class User {
 
     public void addSongToPlaylist(String playlist, Song song) {
         Playlist playlist1ByTitle = findByTitle(playlist);
-        if (playlist1ByTitle != null) {
-            playlist1ByTitle.addSong(song);
-        } else {
-            throw new IllegalArgumentException("Playlist not found");
-        }
+        playlist1ByTitle.addSong(song);
     }
 
     @Override
