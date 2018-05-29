@@ -1,6 +1,6 @@
-package com.IvanNazarchuk;
+package com.mycompany;
 
-public class Test {
+public class MusicRunner {
     public static void main(String[] args) {
 
     }
