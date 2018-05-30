@@ -39,9 +39,9 @@ public class User {
     }
 
     public void addSongToPlaylist(String playlist, Song song) {
-        Playlist playlist1ByTitle = findByTitle(playlist);
-        if (playlist1ByTitle != null) {
-            playlist1ByTitle.addSong(song);
+        Playlist playlistByTitle = findByTitle(playlist);
+        if (playlistByTitle != null) {
+            playlistByTitle.addSong(song);
         }
     }
 
