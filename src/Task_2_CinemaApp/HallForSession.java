@@ -12,16 +12,16 @@ public class HallForSession {
         this.numberRow = numberRow;
         this.numberSeatsInRow = numberSeatsInRow;
         this.amountSeats = numberSeatsInRow * numberRow;
-        for (int i = 0; i < amountSeats; i++) {
-            seats.add(new Seat());
+        for (int i = 1; i <= amountSeats; i++) {
+            seats.add(new Seat(i));
         }
     }
 
     public void reservation(int number) {
-        if (number>=seats.size() || number<0){
+        if (number>seats.size() || number<1){
             throw new IllegalArgumentException("Incorrectly number");
         }
-        seats.get(number).setReservation();
+        seats.get(number-1).setReservation();
     }
 
     public int getNumberOfFreeSeats() {

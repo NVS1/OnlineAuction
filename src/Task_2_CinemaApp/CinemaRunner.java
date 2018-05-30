@@ -10,12 +10,12 @@ public class CinemaRunner {
 
         System.out.println("reservation...");
 
-        hallForSession.reservation(0);
+        hallForSession.reservation(1);
         hallForSession.reservation(24);
         hallForSession.reservation(23);
         hallForSession.reservation(20);
-        hallForSession.reservation(1);
         hallForSession.reservation(2);
+        hallForSession.reservation(3);
 
         System.out.println(hallForSession);
         System.out.println("Number of reserved seats = "+hallForSession.getNumberOfReservedSeats());
