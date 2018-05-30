@@ -1,4 +1,4 @@
-package com.mycompany;
+package Task_1_MusicApp;
 
 import java.util.ArrayList;
 
@@ -33,8 +33,6 @@ public class User {
         for (Playlist playlist : playlists) {
             if (playlist.getTitle().equalsIgnoreCase(title)) {
                 playlistByTitle = playlist;
-            } else {
-                throw new IllegalArgumentException("Playlist not found");
             }
         }
         return playlistByTitle;
@@ -42,7 +40,9 @@ public class User {
 
     public void addSongToPlaylist(String playlist, Song song) {
         Playlist playlist1ByTitle = findByTitle(playlist);
-        playlist1ByTitle.addSong(song);
+        if (playlist1ByTitle != null) {
+            playlist1ByTitle.addSong(song);
+        }
     }
 
     @Override

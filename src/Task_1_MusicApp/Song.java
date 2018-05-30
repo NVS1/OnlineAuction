@@ -1,4 +1,4 @@
-package com.mycompany;
+package Task_1_MusicApp;
 
 public class Song {
     private final String title;

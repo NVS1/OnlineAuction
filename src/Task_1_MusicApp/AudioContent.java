@@ -1,4 +1,4 @@
-package com.mycompany;
+package Task_1_MusicApp;
 
 import java.util.Arrays;
 

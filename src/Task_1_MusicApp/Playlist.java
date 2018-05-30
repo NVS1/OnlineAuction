@@ -1,4 +1,4 @@
-package com.mycompany;
+package Task_1_MusicApp;
 
 import java.util.ArrayList;
 
@@ -7,8 +7,8 @@ public class Playlist {
     private final ArrayList<Song> songs = new ArrayList<>();
 
     public Playlist(String title) {
-        if (title.isEmpty()){
-            throw  new IllegalArgumentException("Incorrectly title");
+        if (title.isEmpty()) {
+            throw new IllegalArgumentException("Incorrectly title");
         }
         this.title = title;
     }
@@ -16,40 +16,37 @@ public class Playlist {
     public String getTitle() {
         return title;
     }
-    public void addSong(Song song){
+
+    public void addSong(Song song) {
         songs.add(song);
     }
-    public long getTotalLength(){
+
+    public long getTotalLength() {
         long sum = 0;
         for (Song song : songs) {
-            sum+=song.getLength();
+            sum += song.getLength();
         }
         return sum;
     }
-    public ArrayList<Song> findByAuthor(String author){
-        songsIsEmpty();
+
+    public ArrayList<Song> findByAuthor(String author) {
         ArrayList<Song> songsByAuthor = new ArrayList<>();
         for (Song song : songs) {
-            if (song.getAuthor().equals(author)){
+            if (song.getAuthor().equals(author)) {
                 songsByAuthor.add(song);
             }
         }
         return songsByAuthor;
     }
-    public ArrayList<Song> findByTitlePart (String titlePart){
-        songsIsEmpty();
+
+    public ArrayList<Song> findByTitlePart(String titlePart) {
         ArrayList<Song> songsByTitlePart = new ArrayList<>();
         for (Song song : songs) {
-            if (song.getTitle().startsWith(titlePart)){
+            if (song.getTitle().startsWith(titlePart)) {
                 songsByTitlePart.add(song);
             }
         }
         return songsByTitlePart;
-    }
-    private void songsIsEmpty(){
-        if (songs.isEmpty()){
-            throw new IllegalStateException("Playlist is empty");
-        }
     }
 
     @Override
