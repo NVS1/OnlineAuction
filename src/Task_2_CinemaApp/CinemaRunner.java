@@ -19,11 +19,9 @@ public class CinemaRunner {
 
         System.out.println(hallForSession);
         System.out.println("Number of reserved seats = "+hallForSession.getNumberOfReservedSeats());
+        System.out.println("Number of free seats = "+hallForSession.getNumberOfFreeSeats());
 
         MovieSession movieSession = new MovieSession(movie, hallForSession, 100, LocalTime.of(14,30));
         System.out.println("Profit is "+movieSession.getProfit()); //600
-
-
-
     }
 }
