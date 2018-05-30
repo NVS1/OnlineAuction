@@ -13,7 +13,7 @@ public class HallForSession {
         this.numberSeatsInRow = numberSeatsInRow;
         this.amountSeats = numberSeatsInRow * numberRow;
         for (int i = 1; i <= amountSeats; i++) {
-            seats.add(new Seat(i));
+            seats.add(new Seat());
         }
     }
 
