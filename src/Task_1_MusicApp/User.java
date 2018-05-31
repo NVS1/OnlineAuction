@@ -42,6 +42,8 @@ public class User {
         Playlist playlistByTitle = findByTitle(playlist);
         if (playlistByTitle != null) {
             playlistByTitle.addSong(song);
+        } else {
+            throw new IllegalArgumentException("Playlist "+playlist+" not found");
         }
     }
 
