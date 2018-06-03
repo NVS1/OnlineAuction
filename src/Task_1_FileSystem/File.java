@@ -1,18 +1,14 @@
 package Task_1_FileSystem;
 
-public class File {
-    private final String name;
+public class File extends NamedFSItem {
     private final int size;
 
     public File(String name, int size) {
-        this.name = name;
+        super(name);
         this.size = size;
     }
 
-    public String getName() {
-        return name;
-    }
-
+    @Override
     public int getSize() {
         return size;
     }
@@ -20,8 +16,7 @@ public class File {
     @Override
     public String toString() {
         return "File{" +
-                "name='" + name + '\'' +
-                ", size=" + size +
+                "size=" + size +
                 '}';
     }
 }
