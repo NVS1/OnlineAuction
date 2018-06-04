@@ -5,7 +5,7 @@ public class Symlink implements FSItem {
     private final FSItem item;
 
     public Symlink(String symlinkName, FSItem item) {
-        this.symlinkName = item.getName();
+        this.symlinkName = symlinkName;
         this.item = item;
     }
 
@@ -16,7 +16,7 @@ public class Symlink implements FSItem {
 
     @Override
     public String getName() {
-        return symlinkName;
+        return symlinkName+" -> "+item.getName();
     }
 
     @Override

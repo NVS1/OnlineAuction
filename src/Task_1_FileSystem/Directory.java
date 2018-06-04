@@ -9,8 +9,25 @@ public class Directory extends NamedFSItem{
     public Directory(String name) {
         super(name);
     }
-    public void add (FSItem fsItem)throws IllegalArgumentException{
+    public Directory add (FSItem fsItem)throws IllegalArgumentException{
+        checkArg(fsItem);
         items.add(fsItem);
+        return this;
+    }
+
+    private void checkArg(FSItem fsItem) {
+        if (fsItem instanceof Directory) {
+            Directory directory = (Directory) fsItem;
+            for (FSItem item : directory.getItems()) {
+                if (item==this){
+                    throw new IllegalArgumentException();
+                }
+            }
+        }
+    }
+
+    private List<FSItem> getItems() {
+        return items;
     }
 
     @Override
