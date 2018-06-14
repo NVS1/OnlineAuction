@@ -8,7 +8,7 @@ public class MusicRunner {
         Song song3 = new Song("MySong3", "author3", "Electro", 4, content);
         Song song4 = new Song("MySong4", "author1", "Rock", 5, content);
 
-        User user = new User("User");
+        User user = new User("OnlineAuction.User");
         user.createPlaylist("Favorite songs");
         user.addSongToPlaylist("favorite songs", song1);
         user.addSongToPlaylist("favorite songs", song2);
