@@ -1,6 +1,6 @@
 package OnlineAuction;
 
-public class SortingRunner {
+public class FilterRunner {
     public static void main(String[] args) {
         User user = new User("Dima",new Account(10000));
         User user1 = new User("Vlad", new Account(20000));
