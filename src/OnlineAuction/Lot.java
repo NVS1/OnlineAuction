@@ -28,6 +28,9 @@ public class Lot {
     }
 
     public Lot(Product product, long startingPrice, User owner, LocalDateTime startTime) {
+        if (startTime.isBefore(LocalDateTime.now())){
+            throw new IllegalArgumentException("Illegal time");
+        }
         this.product = product;
         this.startTime = startTime;
         this.endTime = startTime.plusHours(TIME_AUCTION_HOUR);
@@ -65,9 +68,15 @@ public class Lot {
         return product;
     }
 
-    private boolean checkBid(Bid bid) throws IllegalArgumentException {
-        if (bid.getUser() == owner || bid.getMoney() <= currentPrice || status == Status.FINISHED || currentWinner == bid.getUser() || LocalDateTime.now().isBefore(startTime)) {
-            throw new IllegalArgumentException("Error");
+    private boolean checkBid(Bid bid) throws RuntimeException {
+        if (LocalDateTime.now().isAfter(startTime) && status == Status.EXPECTED){
+            status = Status.RUNNING;
+        }
+        if (bid.getUser() == owner || bid.getMoney() <= currentPrice || currentWinner == bid.getUser()) {
+            throw new IllegalArgumentException("Illegal bid");
+        }
+        if (status == Status.FINISHED  || status == Status.EXPECTED){
+            throw new IllegalStateException("Auction is finished or expected");
         }
         boolean success = bid.getUser().getAccount().withdraw(bid.getMoney());
         if (!success) {
