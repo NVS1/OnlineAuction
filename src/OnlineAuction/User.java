@@ -1,5 +1,6 @@
 package OnlineAuction;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -28,6 +29,11 @@ public class User {
     }
     public Lot createLot (Product product, long startingPrice){
         Lot lot = new Lot(product,startingPrice,this);
+        createdLots.add(lot);
+        return lot;
+    }
+    public Lot createLot (Product product, long startingPrice, LocalDateTime startTime){
+        Lot lot = new Lot(product,startingPrice,this, startTime);
         createdLots.add(lot);
         return lot;
     }
