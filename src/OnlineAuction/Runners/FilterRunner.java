@@ -1,4 +1,9 @@
-package OnlineAuction;
+package OnlineAuction.Runners;
+
+import OnlineAuction.*;
+import OnlineAuction.Enums.Category;
+import OnlineAuction.SortAndFilter.AuctionPredicates;
+import OnlineAuction.AuctionsList;
 
 public class FilterRunner {
     public static void main(String[] args) {
@@ -6,7 +11,7 @@ public class FilterRunner {
         User user1 = new User("Vlad", new Account(20000));
         User user2 = new User("Vasya", new Account(15000));
 
-        Product iphone = new Product("Iphone 5S", "like new",2,Category.SMARTPHONE);
+        Product iphone = new Product("Iphone 5S", "like new",2, Category.SMARTPHONE);
         Product macBook = new Product("MacBook", "something",1,Category.COMPUTERS);
         Product samsung = new Product("Galaxy s8", "something",1,Category.SMARTPHONE);
 

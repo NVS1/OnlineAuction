@@ -1,8 +1,11 @@
 package OnlineAuction;
 
+import OnlineAuction.Enums.Category;
+
+import java.io.Serializable;
 import java.util.UUID;
 
-public class Product {
+public class Product implements Serializable{
     private final String id = UUID.randomUUID().toString();
     private final String name;
     private final String description;

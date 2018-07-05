@@ -1,11 +1,14 @@
 package OnlineAuction;
 
+import OnlineAuction.SortAndFilter.Filter;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class AuctionsList {
+public class AuctionsList implements Serializable {
     private final List<Lot> lotList;
 
     public AuctionsList() {

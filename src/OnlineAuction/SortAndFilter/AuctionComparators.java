@@ -1,4 +1,6 @@
-package OnlineAuction;
+package OnlineAuction.SortAndFilter;
+
+import OnlineAuction.Lot;
 
 import java.util.Comparator;
 

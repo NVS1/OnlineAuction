@@ -1,12 +1,15 @@
 package OnlineAuction;
 
+import OnlineAuction.Enums.Status;
+
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class Lot {
-    private final long TIME_AUCTION_HOUR = 10;
+public class Lot implements Serializable{
+    private final long TIME_AUCTION_HOUR = 5;
     private final String id = UUID.randomUUID().toString();
     private final Product product;
     private final LocalDateTime startTime;

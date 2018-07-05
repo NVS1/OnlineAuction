@@ -1,4 +1,7 @@
-package OnlineAuction;
+package OnlineAuction.SortAndFilter;
+
+import OnlineAuction.Enums.Category;
+import OnlineAuction.Lot;
 
 import java.util.function.Predicate;
 

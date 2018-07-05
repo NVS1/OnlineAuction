@@ -1,11 +1,12 @@
 package OnlineAuction;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class User {
+public class User implements Serializable{
     private final String id = UUID.randomUUID().toString();
     private final String name;
     private final Account account;

@@ -1,6 +1,8 @@
 package OnlineAuction;
 
-public class Account {
+import java.io.Serializable;
+
+public class Account implements Serializable{
     private long money;
 
     public Account(long money) {
@@ -26,7 +28,7 @@ public class Account {
 
     @Override
     public String toString() {
-        return "OnlineAuction.Account{" +
+        return "Account{" +
                 "money=" + money +
                 '}';
     }
