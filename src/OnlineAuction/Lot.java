@@ -54,7 +54,7 @@ public class Lot implements Serializable{
         return true;
     }
 
-    public User getWinner() {
+    public User computeWinner() {
         if (LocalDateTime.now().isAfter(endTime)) {
             if (currentWinner == null) {
                 System.out.println("Winner undefined");
@@ -94,6 +94,10 @@ public class Lot implements Serializable{
 
     public User getOwner() {
         return owner;
+    }
+
+    public User getWinner() {
+        return currentWinner;
     }
 
     public LocalDateTime getStartTime() {

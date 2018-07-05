@@ -14,14 +14,20 @@ public class AuctionRunner {
 
         user1.placeBid(3000,lot);
         user2.placeBid(5000,lot);
-        user1.placeBid(6000, lot); //Winner Andrew
+        user1.placeBid(6000, lot); //Winning Andrew
 
-        System.out.println(lot);
+        System.out.println("Purchase");
+        System.out.println(user1.getPurchase());
+        System.out.println("Sales");
+        System.out.println(user.getSales());
 
         while(lot.getStatus()!= Status.FINISHED){ // Start Auction (5 sec)
-            System.out.println(lot.getWinner());
-            System.out.println(user.getSales());
-            System.out.println(user1.getPurchase());
+            lot.computeWinner();
         }
+        System.out.println("Winner is "+lot.getWinner());
+        System.out.println("Purchase after ending auction");
+        System.out.println(user1.getPurchase());
+        System.out.println("Sales after ending auction");
+        System.out.println(user.getSales());
     }
 }
