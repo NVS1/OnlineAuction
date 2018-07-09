@@ -3,6 +3,7 @@ package OnlineAuction.Runners;
 import OnlineAuction.*;
 import OnlineAuction.Enums.Category;
 import OnlineAuction.IO.LotsBinIO;
+import OnlineAuction.IO.LotsTextIO;
 
 import java.io.IOException;
 
@@ -33,6 +34,12 @@ public class IORunner {
         try {
             AuctionsList newAuctionsList = LotsBinIO.readFromBinFile("Lots");
             System.out.println(newAuctionsList);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            LotsTextIO.writeText("Lots.txt",auctionsList);
         } catch (IOException e) {
             e.printStackTrace();
         }
